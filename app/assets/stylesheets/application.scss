@@ -11,3 +11,41 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+body {
+  background-color: #fff;
+}
+
+.rounded {
+  border-radius: 4px !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.btn-outline-primary:hover {
+  background-color: transparent !important;
+  border-color: #035AC1;
+  color: #035AC1;
+}
+
+.btn-outline-success {
+  border-color: #25AA6E;
+  color: #25AA6E;
+}
+
+.btn-outline-success:hover {
+  background-color: transparent !important;
+  border-color: #238758;
+  color: #238758;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  //grid-auto-rows: minmax(100px, auto);
+}

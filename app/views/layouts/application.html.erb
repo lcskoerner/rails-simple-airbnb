@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsSimpleAirbnb</title>
+    <title>Simple Airbnb</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,6 +12,18 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar bg-light border-bottom">
+      <%= link_to "Simple Airbnb", flats_path, class: "navbar-brand" %>
+      <div class="d-flex">
+        <form class="form-inline">
+          <input class="form-control mr-sm-2 rounded" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0 rounded" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        <%= link_to "New Flat", new_flat_path, class: "btn btn-outline-primary rounded ml-2" %>
+      </div>
+    </nav>
+    <div class="container mt-3">
+      <%= yield %>
+    </div>
   </body>
 </html>
