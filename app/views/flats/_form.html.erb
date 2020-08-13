@@ -1,0 +1,11 @@
+<div class="container bg-light pt-3 pb-3 border">
+  <%= simple_form_for(@flat) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.input :number_of_guests %>
+    <%= f.input :price_per_night %>
+    <%= f.submit class: "btn btn-primary" %>
+    <%= f.button :button, "Clear", type: "reset", class: "btn btn-danger" %>
+  <% end %>
+</div>
