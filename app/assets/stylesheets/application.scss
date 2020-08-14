@@ -7,6 +7,8 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import 'mapbox-gl/dist/mapbox-gl';
+
 
 // Your CSS partials
 @import "components/index";
@@ -48,4 +50,20 @@ a {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
   //grid-auto-rows: minmax(100px, auto);
+}
+
+.flex-align {
+  display:flex;
+  align-items:center;
+  justify-content:space-between
+}
+
+.no-mb {
+  margin-bottom: 0;
+}
+
+.btn-success {
+  background-color: #18BB73;
+  color: white;
+  border-color: #18B06C;
 }

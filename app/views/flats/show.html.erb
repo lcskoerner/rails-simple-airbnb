@@ -1,5 +1,5 @@
-<div class="jumbotron" style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200')"></div>
-<div class="container">
+<div style="position: absolute; width: 100vw; height: 350px; left: 0; top: 57px; background-size: cover; background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200')"></div>
+<div class="container" style="padding-top: 270px;">
   <div class="row">
     <div class="col-8">
       <div class="card mb-4 bg-light rounded">
@@ -12,43 +12,52 @@
         <div class="card-body">
           <h3 class="card-title">A bit more about this flat...</h3>
           <p class="card-text"><%= @flat.description %></p>
-          <div class="map"></div>
+          <div id="map"
+            style="width: 100%; height: 600px;" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         </div>
       </div>
     </div>
     <div class="col-4">
       <div class="card bg-light mb-4 rounded">
         <div class="card-body">
-          <h5 class="card-title">Book this place!</h5>
+          <h4 class="card-title">Book this place!</h4>
           <%= form_with(url: "/flats/#{@flat.id}", method: "get") do %>
-            <%= label_tag(:from, "From:") %>
-            <%= date_field(:from, :from) %>
-            <%= label_tag(:to, "To:") %>
-            <%= date_field(:to, :to) %>
-            <%= submit_tag("Search") %>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">From:</span>
+              </div>
+              <%= date_field(:from, :from, class: "form-control") %>
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">To:</span>
+              </div>
+              <%= date_field(:to, :to, class: "form-control") %>
+            </div>
+            <%= submit_tag("Search", class: "btn btn-success") %>
           <% end %>
         </div>
       </div>
       <div class="card bg-light mb-4 rounded">
         <div class="card-body">
-          <h3 class="card-title">Details</h3>
+          <h4 class="card-title">Details</h4>
           <div class="flex">
-            <p class="card-text"><%= @flat.number_of_guests %> people</p>
+            <p class="card-text"><i class="fas fa-user-friends"></i> <%= @flat.number_of_guests %></p>
           </div>
           <div class="flex">
-            <p class="card-text"><%= @flat.price_per_night %> euros</p>
+            <p class="card-text"><i class="fas fa-euro-sign"></i> <%= @flat.price_per_night %> euros</p>
           </div>
         </div>
       </div>
       <div class="card bg-light rounded">
         <div class="card-body">
           <div class="flex-align">
-            <h6 class="no-mb">Share</h6>
+            <h4 class="no-mb card-title">Share</h4>
             <div class="flex">
-              <i class="fa fa-facebook-square fa-2x mr-2"></i>
-              <i class="fa fa-twitter-square fa-2x mr-2"></i>
-              <i class="fa fa-pinterest-square fa-2x mr-2"></i>
-              <i class="fa fa-envelope-square fa-2x"></i>
+              <i class="fab fa-facebook-square fa-2x mr-2"></i>
+              <i class="fab fa-twitter-square fa-2x mr-2"></i>
+              <i class="fab fa-pinterest-square fa-2x mr-2"></i>
+              <i class="fas fa-envelope-square fa-2x"></i>
             </div>
           </div>
         </div>
